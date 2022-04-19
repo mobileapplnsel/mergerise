@@ -28,6 +28,20 @@ $route['deluser'] = 'Users/onDeleteUser';
 $route['enable2fa'] = 'Users/onGetTwoFACode';
 $route['set2fa'] = 'Users/onSet2FAuth';
 
+
+
+//customer management
+$route['customers'] = 'Customers/index';
+$route['duplicate_check_cust'] = 'Customers/onCheckDuplicateCust';
+$route['add-customer'] = 'Customers/onCreateCustView';
+$route['createcustomer'] = 'Customers/onCreateCust';
+$route['edit-customer/(:any)'] = 'Customers/onGetCustEdit/$1';
+$route['changecustomer'] = 'Customers/onChangeCust';
+$route['delcustomer'] = 'Customers/onDeleteCust';
+$route['customer-kyc-details'] = 'Customers/onGetCustomerKyc';
+$route['ack-customer-kyc'] = 'Customers/onAckCustomerKyc';
+
+
 //cnf entries management
 $route['cnf/list'] = 'CNFEntry/index';
 $route['cnf/duplicate_check'] = 'CNFEntry/onCheckDuplicate';
