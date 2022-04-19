@@ -14,11 +14,11 @@ $page =  $this->uri->segment(1);
 					if ($this->session->userdata('usergroup') == 1) {
 				?>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Manage </span></a>
-							<ul aria-expanded="false" class="collapse  first-level <?php echo ($page == 'add-user' || $page == 'profile' || $page == 'cnf' || $page == 'cnfbilling' || $page == 'edit-segment') ? 'in' : ''; ?>">
+							<ul aria-expanded="false" class="collapse  first-level <?php echo ($page == 'add-user' || $page == 'profile' || $page == 'customers' || $page == 'edit-segment') ? 'in' : ''; ?>">
 
 								<li class="sidebar-item <?php echo ($page == 'add-user' || $page == 'profile') ? 'active' : ''; ?>"><a href="<?php echo base_url(); ?>users" class="sidebar-link <?php echo ($page == 'add-user' || $page == 'profile') ? 'active' : ''; ?>"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"> User Management</span></a></li>
 
-								<li class="sidebar-item <?php echo ($page == 'cnf') ? 'active' : ''; ?>"><a href="<?php echo base_url(); ?>cnf/list" class="sidebar-link <?php echo ($page == 'cnf') ? 'active' : ''; ?>"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"> CNF Management</span></a></li>
+								<li class="sidebar-item <?php echo ($page == 'customers') ? 'active' : ''; ?>"><a href="<?php echo base_url(); ?>customers/list" class="sidebar-link <?php echo ($page == 'customers') ? 'active' : ''; ?>"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"> Customer Management</span></a></li>
 
 							</ul>
 						</li>

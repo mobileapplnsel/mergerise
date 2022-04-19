@@ -31,15 +31,15 @@ $route['set2fa'] = 'Users/onSet2FAuth';
 
 
 //customer management
-$route['customers'] = 'Customers/index';
-$route['duplicate_check_cust'] = 'Customers/onCheckDuplicateCust';
-$route['add-customer'] = 'Customers/onCreateCustView';
-$route['createcustomer'] = 'Customers/onCreateCust';
-$route['edit-customer/(:any)'] = 'Customers/onGetCustEdit/$1';
-$route['changecustomer'] = 'Customers/onChangeCust';
-$route['delcustomer'] = 'Customers/onDeleteCust';
-$route['customer-kyc-details'] = 'Customers/onGetCustomerKyc';
-$route['ack-customer-kyc'] = 'Customers/onAckCustomerKyc';
+$route['customers/list'] = 'Customers/index';
+$route['customers/duplicate_check'] = 'Customers/onCheckDuplicate';
+$route['customers/add'] = 'Customers/onCreateView';
+$route['customers/create'] = 'Customers/onCreate';
+$route['customers/edit/(:any)'] = 'Customers/onGetEdit/$1';
+$route['customers/change'] = 'Customers/onChange';
+$route['customers/delete'] = 'Customers/onDelete';
+$route['customers/kyc-details'] = 'Customers/onGetKyc';
+$route['customers/ack-kyc'] = 'Customers/onAckKyc';
 
 
 //cnf entries management

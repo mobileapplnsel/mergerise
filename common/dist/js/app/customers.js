@@ -18,7 +18,7 @@ $(document).ready(function () {
 
                     type: 'POST',
 
-                    url: BASE_URL + 'delcustomer',
+                    url: BASE_URL + 'customers/delete',
 
                     data: { custid: cust_id },
 
@@ -71,7 +71,7 @@ $(document).ready(function () {
         if (username != '') {
             $.ajax({
                 type: "POST",
-                url: BASE_URL + 'duplicate_check_cust',
+                url: BASE_URL + 'customers/duplicate_check',
                 data: {
                     dup_type: 'username',
                     user_name: username
@@ -111,7 +111,7 @@ $(document).ready(function () {
         if (email != '') {
             $.ajax({
                 type: "POST",
-                url: BASE_URL + 'duplicate_check_cust',
+                url: BASE_URL + 'customers/duplicate_check',
                 data: {
                     dup_type: 'email',
                     email: email
@@ -144,7 +144,7 @@ $(document).ready(function () {
         if (phone != '') {
             $.ajax({
                 type: "POST",
-                url: BASE_URL + 'duplicate_check_cust',
+                url: BASE_URL + 'customers/duplicate_check',
                 data: {
                     dup_type: 'phone',
                     phone: phone
@@ -273,7 +273,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: BASE_URL + 'createcustomer',
+            url: BASE_URL + 'customers/create',
             cache: false,
             data: $('#create_customer_form').serialize(),
             beforeSend: function () {
@@ -356,7 +356,7 @@ $(document).ready(function () {
         if (custid != '') {
             $.ajax({
                 type: "POST",
-                url: BASE_URL + 'customer-kyc-details',
+                url: BASE_URL + 'customers/kyc-details',
                 data: {
                     custid: custid
                 },
@@ -402,7 +402,7 @@ $(document).ready(function () {
         if (ack != '') {
             $.ajax({
                 type: "POST",
-                url: BASE_URL + 'ack-customer-kyc',
+                url: BASE_URL + 'customers/ack-kyc',
                 data: {
                     ack: ack,
                     custid: custid

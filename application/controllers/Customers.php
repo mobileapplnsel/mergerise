@@ -36,13 +36,13 @@ class Customers extends CI_Controller
 			} else {
 				$this->data['cust_data'] = '';
 			}
-			$this->load->view('customers/vw_customer_list', $this->data, false);
+			$this->load->view('customers/vw_list', $this->data, false);
 		} else {
 			redirect(base_url());
 		}
 	}
 
-	public function onCheckDuplicateCust()
+	public function onCheckDuplicate()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 			if ($this->input->is_ajax_request() && $this->input->server('REQUEST_METHOD') == 'POST') {
@@ -127,7 +127,7 @@ class Customers extends CI_Controller
 	}
 
 
-	public function onGetCustEdit()
+	public function onGetEdit()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 
@@ -151,7 +151,7 @@ class Customers extends CI_Controller
 					'lastupdated'  => $custdata->last_updated
 				);
 				//print_obj($this->data['user_data']);die;
-				$this->load->view('customers/vw_customer_edit', $this->data, false);
+				$this->load->view('customers/vw_edit', $this->data, false);
 			} else {
 				redirect(base_url());
 			}
@@ -160,7 +160,7 @@ class Customers extends CI_Controller
 		}
 	}
 
-	public function onChangeCust()
+	public function onChange()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 
@@ -226,7 +226,7 @@ class Customers extends CI_Controller
 					$this->data['update_failure'] = 'Not updated!';
 				}
 
-				$this->load->view('customers/vw_customer_edit', $this->data, false);
+				$this->load->view('customers/vw_edit', $this->data, false);
 			} else {
 				redirect(base_url());
 			}
@@ -235,18 +235,18 @@ class Customers extends CI_Controller
 		}
 	}
 
-	public function onCreateCustView()
+	public function onCreateView()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 
 			$this->data['page_title'] = 'Customer';
-			$this->load->view('customers/vw_customer_add', $this->data, false);
+			$this->load->view('customers/vw_add', $this->data, false);
 		} else {
 			redirect(base_url());
 		}
 	}
 
-	public function onCreateCust()
+	public function onCreate()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 			if ($this->input->is_ajax_request() && $this->input->server('REQUEST_METHOD') == 'POST') {
@@ -373,7 +373,7 @@ class Customers extends CI_Controller
 		}
 	}
 
-	public function onDeleteCust()
+	public function onDelete()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1 && $this->session->userdata('usergroup') == 1) {
 			if ($this->input->is_ajax_request() && $this->input->server('REQUEST_METHOD') == 'POST') {
@@ -411,7 +411,7 @@ class Customers extends CI_Controller
 		}
 	}
 
-	public function onGetCustomerKyc()
+	public function onGetKyc()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1) {
 
@@ -463,7 +463,7 @@ class Customers extends CI_Controller
 		}
 	}
 
-	public function onAckCustomerKyc()
+	public function onAckKyc()
 	{
 		if (!empty($this->session->userdata('userid')) && $this->session->userdata('usr_logged_in') == 1 && $this->session->userdata('usergroup') == 1) {
 			if ($this->input->is_ajax_request() && $this->input->server('REQUEST_METHOD') == 'POST') {

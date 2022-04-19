@@ -62,15 +62,20 @@
 						$datetime2 = new DateTime($today);
 						$difference = $datetime1->diff($datetime2);
 						//print_obj($difference);
-
-						if ($today >= $beforedays) {
-						?>
-							<p class="page-title"><i class="icofont-calendar"></i> <span class="next-renewal blink_renewal"><b>Next Renewal: <?php echo $renewal_date_out . '. (Left: ' . $difference->y . ' years, ' . $difference->m . ' months, ' . $difference->d . ' days)'; ?></b></span></p>
-						<?php
-						} else {
-						?>
-							<p class="page-title"><i class="icofont-calendar"></i> <span class="next-renewal">Next Renewal: <?php echo $renewal_date_out . '. (Left: ' . $difference->y . ' years, ' . $difference->m . ' months, ' . $difference->d . ' days)'; ?></span></p>
-						<?php
+						if(FALSE){
+							if ($today >= $beforedays) {
+							?>
+								<p class="page-title"><i class="icofont-calendar"></i> <span class="next-renewal blink_renewal"><b>Next Renewal: <?php echo $renewal_date_out . '. (Left: ' . $difference->y . ' years, ' . $difference->m . ' months, ' . $difference->d . ' days)'; ?></b></span></p>
+							<?php
+							} else {
+							?>
+								<p class="page-title"><i class="icofont-calendar"></i> <span class="next-renewal">Next Renewal: <?php echo $renewal_date_out . '. (Left: ' . $difference->y . ' years, ' . $difference->m . ' months, ' . $difference->d . ' days)'; ?></span></p>
+							<?php
+							}
+						}else{
+							?>
+							<p class="page-title"> Welcome to <?php echo comp_name; ?></p>
+							<?php
 						}
 						?>
 					</div>
@@ -154,7 +159,7 @@
 								<div class="d-md-flex align-items-center">
 									<div>
 										<h4 class="card-title">Site Analysis</h4>
-										<h5 class="card-subtitle">Overview of YoBikes</h5>
+										<h5 class="card-subtitle">Overview of <?php echo comp_name; ?></h5>
 									</div>
 								</div>
 								<div class="row">
